@@ -2,6 +2,14 @@ import { MDBBtn } from "mdb-react-ui-kit";
 const About = () => {
   return (
     <div>
+      <h2>Featues</h2>
+      <p>
+        <ul>
+          <li>Data is saved in your browser only.</li>
+          <li>As of now, there is no data being tracked.</li>
+          <li>No cookies are being used by the system.</li>
+        </ul>
+      </p>
       <h2>About me</h2>
       <p>
         Hi there! I'm Savan Koradia, the developer behind this time tracking
