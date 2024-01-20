@@ -5,9 +5,20 @@ const About = () => {
       <h2>Featues</h2>
       <p>
         <ul>
-          <li>Data is saved in your browser only.</li>
-          <li>As of now, there is no data being tracked.</li>
-          <li>No cookies are being used by the system.</li>
+          <li>
+            <b>Data storage:</b> Data is saved exclusively within your browser.
+          </li>
+          <li>
+            <b>Data tracking:</b> Currently, no data is being tracked by the
+            system.
+          </li>
+          <li>
+            <b>Cookies:</b> The system does not utilize any cookies.
+          </li>
+          <li>
+            <b>Cross-browser data:</b> Data is not shared across different
+            browsers.
+          </li>
         </ul>
       </p>
       <h2>About me</h2>
@@ -18,9 +29,24 @@ const About = () => {
         with you.
       </p>
       <p>
-        Feel free to check out links to learn more about my experience and skills.
-        <MDBBtn tag="a" href="https://savankoradia.com/" className="stretched-link" color="success">Blog</MDBBtn>&nbsp;
-        <MDBBtn tag="a" href="https://www.linkedin.com/in/savan-koradia/" className="stretched-link">LinkedIn</MDBBtn>
+        Feel free to check out links to learn more about my experience and
+        skills.
+        <MDBBtn
+          tag="a"
+          href="https://savankoradia.com/"
+          className="stretched-link"
+          color="success"
+        >
+          Blog
+        </MDBBtn>
+        &nbsp;
+        <MDBBtn
+          tag="a"
+          href="https://www.linkedin.com/in/savan-koradia/"
+          className="stretched-link"
+        >
+          LinkedIn
+        </MDBBtn>
       </p>
       <h4>Why Time Tracking?</h4>
       <p>
