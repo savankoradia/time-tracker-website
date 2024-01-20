@@ -17,7 +17,7 @@ export default function NavBar() {
   return (
     <MDBNavbar expand='lg' light bgColor='light'>
       <MDBContainer fluid>
-        <MDBNavbarBrand href='/'>Time Tracking App</MDBNavbarBrand>
+        <MDBNavbarBrand href='/time-tracker-website'>Time Tracking App</MDBNavbarBrand>
         <MDBNavbarToggler
           aria-controls='navbarSupportedContent'
           aria-expanded='false'
@@ -30,7 +30,7 @@ export default function NavBar() {
         <MDBCollapse navbar open={openBasic}>
           <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
             <MDBNavbarItem>
-              <Link className='nav-link' to="/">Home</Link>
+              <Link className='nav-link' to="/time-tracker-website">Home</Link>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <Link className='nav-link' to="/about">About</Link>

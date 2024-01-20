@@ -18,7 +18,7 @@ function App() {
           <NavBar />
           <MDBContainer fluid className="py-5">
             <Routes>
-              <Route path="/" element={<Dashboard />} />
+              <Route path="/time-tracker-website" element={<Dashboard />} />
               <Route path="/about" element={<About />} />
               <Route path="/project" element={<Project />} />
             </Routes>
