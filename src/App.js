@@ -20,7 +20,7 @@ function App() {
             <Routes>
               <Route path="/time-tracker-website" element={<Dashboard />} />
               <Route path="/time-tracker-website/about" element={<About />} />
-              <Route path="/project" element={<Project />} />
+              {/* <Route path="/project" element={<Project />} /> */}
             </Routes>
           </MDBContainer>
         </BrowserRouter>
