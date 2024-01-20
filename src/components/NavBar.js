@@ -33,7 +33,7 @@ export default function NavBar() {
               <Link className='nav-link' to="/time-tracker-website">Home</Link>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <Link className='nav-link' to="/about">About</Link>
+              <Link className='nav-link' to="/time-tracker-website/about">About</Link>
             </MDBNavbarItem>
             {/* <MDBNavbarItem>
               <Link className='nav-link' to="/project">Project</Link>

@@ -19,7 +19,7 @@ function App() {
           <MDBContainer fluid className="py-5">
             <Routes>
               <Route path="/time-tracker-website" element={<Dashboard />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/time-tracker-website/about" element={<About />} />
               <Route path="/project" element={<Project />} />
             </Routes>
           </MDBContainer>
