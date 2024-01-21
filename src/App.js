@@ -1,4 +1,4 @@
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MDBContainer } from "mdb-react-ui-kit";
 
@@ -7,10 +7,16 @@ import Footer from "./components/Footer";
 
 import Dashboard from "./pages/dashboard";
 import About from "./pages/about";
-import Project from "./pages/project";
+
 
 function App() {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: Infinity
+      }
+    }
+  });
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
@@ -20,7 +26,6 @@ function App() {
             <Routes>
               <Route path="/time-tracker-website" element={<Dashboard />} />
               <Route path="/time-tracker-website/about" element={<About />} />
-              {/* <Route path="/project" element={<Project />} /> */}
             </Routes>
           </MDBContainer>
         </BrowserRouter>

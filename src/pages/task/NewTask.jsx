@@ -7,7 +7,8 @@ import {
   MDBCol,
 } from "mdb-react-ui-kit";
 import Timer from "./Timer";
-import { createTask, getLastEntry, updateTask } from "../../utils/dbStore";
+
+import { createTask, getLastEntry, updateTask } from "../../utils/localDataStore";
 
 const NewTask = () => {
   var taskData = {
@@ -21,20 +22,20 @@ const NewTask = () => {
   const [state, setState] = useState(false);
 
   useEffect(() => {
-    //onload check if there is task exists in the database which is not ended.
-    getLastEntry().then((lastEntry) => {
-      if (lastEntry?.endTime) {
-        return;
-      }
-
-      taskData.id = lastEntry.id;
-      taskData.name = lastEntry.name;
-      taskData.startTime = lastEntry.startTime;
-      taskData.endTime = null;
-      setName(taskData.name);
-      setState(true);
-      setTask(taskData);
-    });
+    var lastTask = getLastEntry();
+    if (!lastTask) {
+      return;
+    }
+    if (lastTask?.endTime) {
+      return;
+    }
+    taskData.id = lastTask.id;
+    taskData.name = lastTask.name;
+    taskData.startTime = lastTask.startTime;
+    taskData.endTime = null;
+    setName(taskData.name);
+    setState(true);
+    setTask(taskData);
     // eslint-disable-next-line
   }, []);
 
@@ -43,7 +44,6 @@ const NewTask = () => {
     if (task) {
       taskData = task;
       taskData.endTime = Date.now();
-      
       updateTask(taskData);
       setTask(null);
       setName("");
@@ -51,7 +51,6 @@ const NewTask = () => {
     } else {
       taskData.name = name;
       taskData.startTime = Date.now();
-
       setTask(taskData);
       setState(true);
       createTask(taskData);
