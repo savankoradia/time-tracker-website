@@ -11,7 +11,7 @@ import {
 } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faInfoCircle, faCogs } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faInfoCircle, faCogs, faStopwatch } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar() {
   const [openBasic, setOpenBasic] = useState(false);
@@ -20,7 +20,7 @@ export default function NavBar() {
     <MDBNavbar expand="lg" light bgColor="light">
       <MDBContainer fluid>
         <MDBNavbarBrand href="/time-tracker-website">
-          Time Tracking App
+        <FontAwesomeIcon icon={faStopwatch} /> Time Tracking App
         </MDBNavbarBrand>
         <MDBNavbarToggler
           aria-controls="navbarSupportedContent"
