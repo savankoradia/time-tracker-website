@@ -24,6 +24,11 @@ const DeleteMemory = () => {
     toggleOpen();
   };
 
+  const getLocalStorageSize = () => {
+    const blob = new Blob(Object.values(localStorage));
+    return `${blob.size / 1024 } KB`;
+  };
+
   return (
     <div>
       <MDBBtn
@@ -33,7 +38,7 @@ const DeleteMemory = () => {
         size="lg"
         onClick={toggleOpen}
       >
-       <FontAwesomeIcon icon={faTrash} /> Delete all memory
+       <FontAwesomeIcon icon={faTrash} /> Delete all memory ({getLocalStorageSize()})
       </MDBBtn>
       <MDBModal open={basicModal} setOpen={setBasicModal} tabIndex="-1">
         <MDBModalDialog>
