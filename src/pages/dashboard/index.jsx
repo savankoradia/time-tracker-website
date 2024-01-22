@@ -1,9 +1,7 @@
-import NewTask from "../task/NewTask";
 const Dashboard = () => {
     return (
         <div>
-            {/* Display new task area */}
-            <NewTask />
+            Display dashboard.
         </div>
     );
 };
