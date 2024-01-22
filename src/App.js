@@ -5,8 +5,9 @@ import { MDBContainer } from "mdb-react-ui-kit";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
-import Dashboard from "./pages/dashboard";
 import About from "./pages/about";
+import Tasks from "./pages/task";
+import Settings from "./pages/settings";
 
 
 function App() {
@@ -24,8 +25,9 @@ function App() {
           <NavBar />
           <MDBContainer fluid className="py-5">
             <Routes>
-              <Route path="/time-tracker-website" element={<Dashboard />} />
+              <Route path="/time-tracker-website" element={<Tasks />} />
               <Route path="/time-tracker-website/about" element={<About />} />
+              <Route path="/time-tracker-website/settings" element={<Settings />} />
             </Routes>
           </MDBContainer>
         </BrowserRouter>

@@ -1,80 +1,99 @@
-import { MDBBtn } from "mdb-react-ui-kit";
+import React from "react";
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBIcon,
+  MDBRow,
+  MDBTypography,
+  MDBCard,
+  MDBCardHeader,
+  MDBCardBody,
+  MDBCardText,
+} from "mdb-react-ui-kit";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faExternalLinkAlt,
+  faUserCircle,
+  faUnlock
+} from "@fortawesome/free-solid-svg-icons";
+
 const About = () => {
   return (
-    <div>
-      <h2>Featues</h2>
-      <p>
-        <ul>
-          <li>
-            <b>Data storage:</b> Data is saved exclusively within your browser.
-          </li>
-          <li>
-            <b>Data tracking:</b> Currently, no data is being tracked by the
-            system.
-          </li>
-          <li>
-            <b>Cookies:</b> The system does not utilize any cookies.
-          </li>
-          <li>
-            <b>Cross-browser data:</b> Data is not shared across different
-            browsers.
-          </li>
-        </ul>
-      </p>
-      <h2>About me</h2>
-      <p>
-        Hi there! I'm Savan Koradia, the developer behind this time tracking
-        application. I'm passionate about creating tools that help people work
-        more efficiently and productively, and I'm excited to share this project
-        with you.
-      </p>
-      <p>
-        Feel free to check out links to learn more about my experience and
-        skills.
-        <MDBBtn
-          tag="a"
-          href="https://savankoradia.com/"
-          className="stretched-link"
-          color="success"
-        >
-          Blog
-        </MDBBtn>
-        &nbsp;
-        <MDBBtn
-          tag="a"
-          href="https://www.linkedin.com/in/savan-koradia/"
-          className="stretched-link"
-        >
-          LinkedIn
-        </MDBBtn>
-      </p>
-      <h4>Why Time Tracking?</h4>
-      <p>
-        I believe that effective time management is essential for success in any
-        field. Whether you're a freelancer, a small business owner, or part of a
-        large team, understanding how you spend your time can help you boost
-        productivity, identify areas for improvement, and achieve your goals.
-      </p>
-      <h4>My Vision for This App</h4>
-      <p>
-        I created this time tracking application with a simple goal in mind: to
-        make time management easier and more accessible for everyone. I wanted
-        to build a tool that was not only powerful but also user-friendly and
-        visually appealing. That's why I chose to use React for its flexibility
-        and performance, and MDBootstrap for its clean and modern design.
-      </p>
-      <h4>What's Next?</h4>
-      <p>
-        I'm constantly working to improve this application and add new features.
-        I'm open to feedback and suggestions, so please feel free to reach out
-        if you have any ideas!
-      </p>
-      <p>
-        I'm excited to see how this app can help you take control of your time
-        and achieve your goals.
-      </p>
-      <p>Thanks for visiting!</p>
-    </div>
+    <MDBContainer>
+      <MDBRow>
+        <MDBCard>
+          <MDBCardHeader>
+            <h2><FontAwesomeIcon icon={faUnlock} /> Features</h2>
+          </MDBCardHeader>
+          <MDBCardBody>
+            <MDBCardText>
+              <MDBTypography listUnStyled className="lead mb-0">
+                <li className="mb-1">
+                  <MDBIcon icon="check-circle" className="me-2 text-success" />
+                  <MDBTypography tag="strong">Data storage:</MDBTypography> Data
+                  is saved exclusively within your browser.
+                </li>
+                <li className="mb-1">
+                  <MDBIcon icon="check-circle" className="me-2 text-success" />
+                  <MDBTypography tag="strong">
+                    Data tracking:
+                  </MDBTypography>{" "}
+                  Currently, no data is being tracked by the system.
+                </li>
+                <li className="mb-1">
+                  <MDBIcon icon="check-circle" className="me-2 text-success" />
+                  <MDBTypography tag="strong">Cookies:</MDBTypography> The
+                  system does not utilize any cookies.
+                </li>
+                <li className="mb-1">
+                  <MDBIcon icon="check-circle" className="me-2 text-success" />
+                  <MDBTypography tag="strong">
+                    Cross-browser data:
+                  </MDBTypography>{" "}
+                  Data is not shared across different browsers.
+                </li>
+              </MDBTypography>
+            </MDBCardText>
+          </MDBCardBody>
+        </MDBCard>
+      </MDBRow>
+      <MDBRow>
+        <MDBCard>
+          <MDBCardHeader>
+            <h2><FontAwesomeIcon icon={faUserCircle} /> About Me</h2>
+          </MDBCardHeader>
+          <MDBCardBody>
+            <MDBTypography>
+              Hi there! I'm Savan Koradia, the developer behind this time
+              tracking application. I'm passionate about creating tools that
+              help people work more efficiently and productively, and I'm
+              excited to share this project with you.
+            </MDBTypography>
+            <MDBBtn
+              tag="a"
+              href="https://savankoradia.com/"
+              className="stretched-link"
+              color="success"
+            >
+              Blog <FontAwesomeIcon icon={faExternalLinkAlt} />
+            </MDBBtn>{" "}
+            &nbsp;
+            <MDBBtn
+              tag="a"
+              href="https://www.linkedin.com/in/savan-koradia/"
+              className="stretched-link"
+            >
+              LinkedIn <FontAwesomeIcon icon={faExternalLinkAlt} />
+            </MDBBtn>
+          </MDBCardBody>
+        </MDBCard>
+      </MDBRow>
+      <MDBRow>
+        <MDBTypography className="mb-0" tag="em">
+          Thanks for visiting!
+        </MDBTypography>
+      </MDBRow>
+    </MDBContainer>
   );
 };
 export default About;
