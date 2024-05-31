@@ -77,12 +77,12 @@ const NewTask = () => {
             block
             size="lg"
           >
-            {!currentTask && (
+            { (!currentTask || !currentTask.id) && (
               <>
                 <FontAwesomeIcon icon={faPlayCircle} /> Start Tracking
               </>
             )}
-            {currentTask && !currentTask.endTime && (
+            {currentTask && currentTask.id && !currentTask.endTime && (
               <>
                 <FontAwesomeIcon icon={faPauseCircle} /> &nbsp;
                 <Timer startTime={currentTask.startTime} />
