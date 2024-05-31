@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { TaskContext } from "./TaskContext";
 
 function Timer({ startTime }) {
+  const { getLastRunningTask } = useContext(TaskContext);
   const [elapsedTime, setElapsedTime] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setElapsedTime(Date.now() - startTime);
+      setElapsedTime(Date.now() - getLastRunningTask().startTime);
     }, 1000);
 
     return () => clearInterval(intervalId); // Clear interval on unmount

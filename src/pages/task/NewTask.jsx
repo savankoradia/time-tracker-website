@@ -6,14 +6,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPauseCircle, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
 const NewTask = () => {
-  const { tasks, addTask, updateTask, getLastRunningTask } = useContext(TaskContext);
+  const { tasks, addTask, updateTask, getLastRunningTask } =
+    useContext(TaskContext);
   const [taskName, setTaskName] = useState("");
   const [state, setState] = useState(false);
   const [currentTask, setCurrentTask] = useState({
     id: null,
-    name: '',
+    name: "",
     startTime: null,
-    endTime: null
+    endTime: null,
   });
 
   useEffect(() => {
@@ -23,8 +24,8 @@ const NewTask = () => {
       setState(true);
       setTaskName(task.name);
     }
-    
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tasks]);
 
   const handleSubmit = (event) => {
@@ -37,7 +38,7 @@ const NewTask = () => {
         id: currentTime,
         name: taskName,
         startTime: currentTime,
-        endTime: null
+        endTime: null,
       };
       setCurrentTask(task);
       addTask(task);
@@ -76,12 +77,17 @@ const NewTask = () => {
             block
             size="lg"
           >
-            {!state ? <FontAwesomeIcon icon={faPlayCircle} /> : <FontAwesomeIcon icon={faPauseCircle} /> }&nbsp;
-            {!state ? (
-                  "Start Tracking"
-                ) : (
-                  <Timer startTime={currentTask.startTime} />
-                )}
+            {!currentTask && (
+              <>
+                <FontAwesomeIcon icon={faPlayCircle} /> Start Tracking
+              </>
+            )}
+            {currentTask && !currentTask.endTime && (
+              <>
+                <FontAwesomeIcon icon={faPauseCircle} /> &nbsp;
+                <Timer startTime={currentTask.startTime} />
+              </>
+            )}
           </MDBBtn>
         </MDBCol>
       </MDBRow>

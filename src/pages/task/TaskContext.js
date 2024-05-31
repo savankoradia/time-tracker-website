@@ -67,8 +67,31 @@ export const TaskProvider = ({children}) => {
         localStorage.setItem("tasks", JSON.stringify(newList));
     };
 
+    /**
+     * Closes previous task and starts a new task.
+     * @param {Number} taskId 
+     */
+    const jumpStartTask = (taskId) => {
+        var lastRunningTask = getLastRunningTask();
+        if (lastRunningTask) {
+            lastRunningTask.endTime = Date.now();
+            updateTask(lastRunningTask.id, lastRunningTask);
+        }
+        if (tasks) {
+            var taskData = tasks[taskId];
+            let currentTime = Date.now();
+            let task = {
+                id: currentTime,
+                name: taskData.name,
+                startTime: currentTime,
+                endTime: null
+              };
+            addTask(task);
+        }
+    };
+
     return (
-        <TaskContext.Provider value={{tasks, addTask, updateTask, getLastRunningTask, deleteTask}}>
+        <TaskContext.Provider value={{tasks, addTask, updateTask, getLastRunningTask, deleteTask, jumpStartTask}}>
             {children}
         </TaskContext.Provider>
     );

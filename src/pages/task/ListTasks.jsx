@@ -4,6 +4,7 @@ import { TaskContext } from "./TaskContext";
 import DisplayTime from "./DisplayTime";
 import TotalTime from "./TotalTime";
 import DeleteTask from "./DeleteTask";
+import JumpStart from "./JumpStart";
 
 const ListTasks = () => {
   const { tasks } = useContext(TaskContext);
@@ -25,7 +26,16 @@ const ListTasks = () => {
               <tr key={key}>
                 <th scope="row">{index + 1}</th>
                 <td>{task.name}</td>
-                <td>{new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(task.startTime)}</td>
+                <td>
+                  {new Intl.DateTimeFormat("en-US", {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    second: "2-digit",
+                  }).format(task.startTime)}
+                </td>
                 <td>
                   <DisplayTime
                     startTime={task.startTime}
@@ -34,6 +44,7 @@ const ListTasks = () => {
                 </td>
                 <td>
                   <DeleteTask task={task} />
+                  <JumpStart task={task} />
                 </td>
               </tr>
             );

@@ -23,7 +23,7 @@ const DeleteTask = ({ task }) => {
     toggleOpen();
   };
   return (
-    <div>
+    <>
       <MDBBtn color="danger" disabled={!task.endTime} onClick={toggleOpen}>
        <FontAwesomeIcon icon={faTrashAlt} /> Delete
       </MDBBtn>
@@ -51,7 +51,7 @@ const DeleteTask = ({ task }) => {
           </MDBModalContent>
         </MDBModalDialog>
       </MDBModal>
-    </div>
+    </>
   );
 };
 export default DeleteTask;
