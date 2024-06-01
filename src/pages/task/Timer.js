@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { TaskContext } from "./TaskContext";
+import React, { useState, useEffect } from 'react';
 
 function Timer({ startTime }) {
   const [elapsedTime, setElapsedTime] = useState(0);
